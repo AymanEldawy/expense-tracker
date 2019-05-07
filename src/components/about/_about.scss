@@ -1,0 +1,94 @@
+.about {
+  margin: 50px 0;
+  padding: 30px 0;
+  min-height: 250px;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  &:before,
+  &:after {
+    @include overlay();
+    width: 120%;
+    z-index: -1;
+    left: -10%;
+  }
+  &:before {
+    background-color: $YDColor;
+    transform: rotate(3deg);
+  }
+  &:after {
+    background-color: $YLColor;
+    transform: rotate(-3deg);
+  }
+
+  .about_me {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-gap: 10px 20px;
+    min-height: 450px;
+    text-align: left;
+    @include minMedia {
+      grid-template-columns: 1fr;
+      grid-gap: 50px 20px;
+    }
+    .about_img {
+      background: $YBColor;
+      position: relative;
+      min-height: 350px;
+      box-shadow: 0 0 5px #423e3e;
+      @include minMedia {
+        overflow: hidden;
+        width: 100%;
+      }
+
+      h4 {
+        padding: 10px;
+      }
+      div {
+        img {
+          max-width: 125%;
+          position: absolute;
+          left: 25px;
+          top: -50px;
+          // transform: rotate(3deg);
+          @include minMedia {
+            min-width: 100%;
+            max-width: 100%;
+            left: auto;
+            right: -50px;
+            top: 0;
+            bottom: -5px;
+          }
+          @include smMedia {
+            min-width: 100%;
+            max-width: 100%;
+            left: auto;
+            right: -50px;
+            top: auto;
+            bottom: 0px;
+          }
+        }
+      }
+      span {
+        display: block;
+        font-size: 18px;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+    }
+    .about_info {
+      padding: 20px;
+      border-left: 2px solid $YDColor;
+      color: #000;
+      p {
+        font-size: 18px;
+        &:after {
+          @include overlay();
+          width: 3%;
+          left: -3%;
+          background-color: $YDColor;
+        }
+      }
+    }
+  }
+}

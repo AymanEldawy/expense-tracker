@@ -1,0 +1,41 @@
+.contact {
+  overflow: hidden;
+  margin: 50px 0 0;
+  .style_form {
+    background: #fbd05a;
+    padding: 39px 30px;
+    border-radius: 50px 30px 20px 152px;
+    float: right;
+    width: 75%;
+    text-align: center;
+    min-height: 480px;
+
+    @include minMedia {
+      width: 90%;
+    }
+    @include mdMedia {
+      width: 60%;
+    }
+    form {
+      .form-group {
+        margin-bottom: 1.5rem;
+        input,
+        textarea {
+          width: 100%;
+          background: navajowhite;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 0 25px;
+        }
+      }
+    }
+  }
+  .footer {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 2px solid #d7b24d;
+    padding: 15px;
+  }
+}

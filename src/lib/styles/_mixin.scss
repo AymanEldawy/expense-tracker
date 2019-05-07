@@ -1,0 +1,202 @@
+//Mixin Media Query
+@mixin minMedia{
+    @media(min-width:400px) and (max-width:767px) {
+      @content;
+    }
+}
+@mixin sxMedia{
+    @media(max-width:767px) {
+      @content;
+    }
+}
+@mixin smMedia{
+    @media(min-width:768px) {
+      @content;
+    }
+}
+@mixin mdMedia{
+    @media(min-width:992px) {
+      @content;
+    }
+}
+@mixin lgMedia{
+    @media(min-width:1200px) {
+      @content;
+    }
+}
+//overlay
+@mixin overlay{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+//prefixer
+@mixin prefixer($poroparty , $value , $prefixes: ()) {
+    @each $prefix in $prefixes{
+        #{'-' + $prefix + '-' + $poroparty}: $value
+    }
+    #{$poroparty }: $value
+}
+/*Container*/
+@media(min-width:768px) {
+    .container{
+        width: 750px;
+        padding-left:15px;
+        padding-right:15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media(min-width:992px) {
+    .container{
+        width: 970px;
+        padding-left:15px;
+        padding-right:15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media(min-width:1200px) {
+    .container{
+        width: 1170px;
+        padding-left:15px;
+        padding-right:15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+//Keyframs
+@mixin keyFram($animation-name) {
+
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+/* Grid System */
+@media(max-width:767px) {
+    @for $i from 1 through 12{
+    .col-xs-#{$i}{
+        width:(100% / 12 * $i);
+        float: left;
+        padding: 10px;
+        }
+    }
+
+}
+@media(min-width:768px) {
+    @for $i from 1 through 12{
+    .col-sm-#{$i}{
+        width:(100% / 12 * $i);
+        float: left;
+        padding: 10px;
+        }
+    }
+
+}
+@media(min-width:992px) {
+    @for $i from 1 through 12{
+    .col-md-#{$i}{
+        width:(100% / 12 * $i);
+        float: left;
+        padding: 10px;
+        }
+    }
+
+}
+@media(min-width:1200px) {
+    @for $i from 1 through 12{
+    .col-lg-#{$i}{
+        width:(100% / 12 * $i);
+        float: left;
+        padding: 10px;
+        }
+    }
+}
+/* Geid System */
+/* push */
+@media(max-width:767px) {
+    @for $i from 1 through 12{
+    .col-xs-push-#{$i}{
+        margin-left:(100% / 12 * $i);
+
+        }
+    }
+
+}
+@media(min-width:768px) {
+    @for $i from 1 through 12{
+    .col-sm-push-#{$i}{
+        margin-left:(100% / 12 * $i);
+
+        }
+    }
+
+}
+@media(min-width:992px) {
+   @for $i from 1 through 12{
+    .col-md-push-#{$i}{
+        margin-left:(100% / 12 * $i);
+
+        }
+    }
+
+}
+@media(min-width:1200px) {
+    @for $i from 1 through 12{
+    .col-lg-push-#{$i}{
+        margin-left:(100% / 12 * $i);
+
+        }
+    }
+}
+/* push */
+/* pull */
+@media(max-width:767px) {
+    @for $i from 1 through 12{
+    .col-xs-pull-#{$i}{
+        left:(100% / 12 * $i);
+
+        }
+    }
+
+}
+@media(min-width:768px) {
+    @for $i from 1 through 12{
+    .col-sm-pull-#{$i}{
+        left:(100% / 12 * $i);
+
+        }
+    }
+
+}
+@media(min-width:992px) {
+   @for $i from 1 through 12{
+    .col-md-pull-#{$i}{
+        left:(100% / 12 * $i);
+
+        }
+    }
+
+}
+@media(min-width:1200px) {
+    @for $i from 1 through 12{
+    .col-lg-pull-#{$i}{
+        left:(100% / 12 * $i);
+
+        }
+    }
+}
+/* push */

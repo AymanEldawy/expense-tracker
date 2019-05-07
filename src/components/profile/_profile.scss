@@ -1,0 +1,66 @@
+.profile {
+  text-align: center;
+  overflow: hidden;
+  padding: 20px;
+  .toggle_profile {
+    text-align: left;
+
+  }
+  .profile-box {
+    margin-top: 20px;
+    overflow: hidden;
+    .box {
+      position: relative;
+      padding: 5px;
+      border-radius: 5px;
+      border: 2px solid;
+      background-color: #ddd;
+      max-width: calc(94% / 3);
+      margin-left: 1%;
+      margin-right: 1%;
+      margin-bottom: 20px;
+      float: left;
+      height: 250px;
+      overflow: hidden;
+      @include minMedia{
+        margin:20px 0;
+        max-width: calc(100% / 1);
+        height: 300px;
+        float :auto;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+      }
+      .box-info {
+        transition: all 0.4s ease-in-out;
+        transform: scale(0);
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        background-color: #c1c0ba78;
+        padding: 10px;
+        color: #fff;
+        overflow: hidden;
+        .link {
+          font-size: 20px;
+          padding: 5px 10px;
+          margin: 10px 0;
+          border: 1px solid;
+          display: inline-block;
+          border-radius: 20%;
+          background: #343a40;
+          color: #fff !important;
+        }
+      }
+      &:hover .box-info {
+        transform: scale(1) !important;
+      }
+    }
+  }
+  > button {
+    width: 250px;
+  }
+}
