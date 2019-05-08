@@ -11,23 +11,40 @@ class Profile extends Component {
         <div className="container">
           <h1 className="title">PROFILE</h1>
           <div className="toggle_profile">
-            <Button size="md" color="secondary" className="mr-2">
+            <Button
+              onClick={this.props.all}
+              size="md"
+              color="secondary"
+              className="mr-2"
+            >
               All
             </Button>
-            <Button size="md" color="secondary" className="mr-2" outline>
+            <Button
+              onClick={this.props.graphic}
+              size="md"
+              color="secondary"
+              className="mr-2"
+              outline
+            >
               Graphic
             </Button>
-            <Button size="md" color="secondary" className="mr-2" outline>
+            <Button
+              onClick={this.props.web}
+              size="md"
+              color="secondary"
+              className="mr-2"
+              outline
+            >
               Web
             </Button>
           </div>
           <div className="profile-box">
             {this.props.profile.map(profile => {
               return (
-                <div className="box" key={Math.random() * 10}>
+                <div id={this.isAll  === true ? 'show' : 'graphic'} className="box" key={Math.random() * 10}>
                   <img src={profile.img} alt="" />
                   <div className="box-info">
-                    <a href="#" className="link" color="" >
+                    <a href="#" className="link" color="">
                       {Fa_Link()}
                     </a>
                     <h4>{profile.title}</h4>
@@ -36,9 +53,8 @@ class Profile extends Component {
                 </div>
               );
             })}
-
           </div>
-          <Button color="dark" >Show More </Button>
+          <Button color="dark">Show More </Button>
         </div>
       </div>
     );
@@ -46,7 +62,18 @@ class Profile extends Component {
 }
 function mapStateToProps(state) {
   return {
-    profile: state.profile
+    profile: state.reducerProfile.profiles
   };
 }
-export default connect(mapStateToProps)(Profile);
+function mapDespatchToProps(despatch) {
+  return {
+    all: () => despatch({type:'ALL'}),
+    web: () => despatch({type:'WEB'}),
+    graphic: () => despatch({type:'GRAPHIC'})
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDespatchToProps
+)(Profile);
