@@ -1,14 +1,20 @@
 {
-  "name": "mytmp",
+  "name": "expense-track",
   "version": "0.1.0",
   "private": false,
   "dependencies": {
+    "animate.css": "^3.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.0",
-    "react-scripts": "3.0.0"
+    "react-scripts": "^2.1.8",
+    "react-scroll": "^1.7.11",
+    "react-spring": "^8.0.20",
+    "redux": "^4.0.4",
+    "uuidv4": "^6.2.12"
   },
   "scripts": {
+    "lint": "eslint --fix",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -35,8 +41,9 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "bootstrap": "^4.3.1",
     "material-icons-react": "^1.0.4",
-    "react-redux": "^7.0.3",
+    "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.0",
+    "react-scrollbar": "^0.5.6",
     "reactstrap": "^8.0.0"
   }
 }

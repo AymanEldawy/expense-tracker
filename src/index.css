@@ -1,0 +1,224 @@
+:root {
+  --main-color: #9e66f7;
+  --main-text: #6c6c6c;
+  --active-color: #fff;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--main-color);
+  color: var(--main-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  box-shadow: 0 1px 4px #8d8d8d;
+  background: #ffffff;
+  border-radius: 15px;
+}
+@media(min-width: 992px){
+  .container {
+    max-width: 900px;
+  }
+}
+.flex {
+  display: flex;
+  gap: 0 10px;
+}
+.flex > :first-child {
+  min-width: 300px;
+}
+.flex > :last-child {
+  padding-left: 10px;
+  border-left: 1px solid #ccc8;
+  flex: 1;
+}
+
+h1 {
+  border-bottom: 1px solid #ccc8;
+  padding-bottom: 7px;
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+h2 {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+input:focus {
+  outline-color: rgb(154 137 255 / 45%);
+  outline-width: 1px;
+}
+
+.balance {
+  margin: 10px 0;
+  padding: 10px;
+  text-align: center;
+  background: var(--main-color);
+  color: #fff;
+  border-radius: 5px;
+}
+
+.transaction {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+}
+.transaction > div {
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  
+}
+.incomes {
+  background: #d8f7d7;
+  color: #3cbd33;
+}
+.expenses {
+  background: #f7c9c9;
+  color: #f54949;
+}
+.subtitle {
+  font-size: 14px;
+}
+.price {
+  margin-top: 2px;
+  font-size: 1.1rem;
+}
+.transactions {
+  max-height: 390px;
+  overflow: auto;
+  padding-right: 10px;
+  min-width:350px;
+}
+
+.item {
+  position: relative;
+  padding: 10px 15px;
+  background: #efefef;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow: hidden;
+  border: 1px solid #ccc8
+}
+.item.expense {
+  border-right: 4px solid #f94c4c;
+}
+.item.income {
+  border-right: 4px solid #81ff7f;
+}
+.item h4 {
+  margin-bottom: 3px;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+.item p {
+  font-size: 0.9rem;
+}
+.item strong {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1rem;
+}
+.item .item-delete {
+  position: absolute;
+  right: -200px;
+  bottom: 6px;
+  font-size: 12px;
+  background-color: #ff3939;
+  color: #fff;
+  padding: 1px 4px;
+  border-radius: 5px;
+  transition: right 0.4s ease-in-out;
+  cursor: pointer;
+}
+.item:hover .item-delete {
+  right: 10px;
+}
+
+/* Form */
+form {
+  margin-top: 20px;
+}
+
+form h3 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.field {
+  position: relative;
+  margin-bottom: 20px;
+}
+.field input {
+  border-radius: 0.25rem;
+  padding: 10px;
+  border: 1px solid #ccc8;
+  background: none;
+  width: 100%;
+}
+
+.field label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background: #ffffff;
+  padding: 2px 5px;
+  border-radius: 15px;
+  font-size: 14px;
+  color: #5e5d5d;
+  line-height: 1;
+  pointer-events: none;
+}
+.field input:focus + label,
+.field input:valid + label {
+  top: -10px;
+}
+form button {
+  padding: 8px 10px;
+  border: 1px solid rgb(154 137 255 / 89%);
+  background: var(--main-color);
+  color: #fff;
+  border-radius: 4px;
+  width: 100%;
+  cursor: pointer;
+  transition: color .2s ease-out;
+}
+form button:hover {
+  background: rgb(136, 117, 245);
+}
+
+.empty {
+  margin-top: 10px;
+  font-size: .9rem;
+}
+
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 500px;
+    margin-left: 15px; 
+    margin-right: 15px; 
+    margin-bottom:50px;
+  }
+  .flex {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .flex > :last-child {
+    padding-left: 0;
+  }
+  .flex .transactions{
+    border-left: none;
+  }
+}
+
+
+
